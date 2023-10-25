@@ -1,0 +1,25 @@
+.background {
+  width: 500px;
+  height: 220px;
+  background-color: yellow;
+  border: 1px solid black;
+  position: relative;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position:absolute; 
+  top: 30%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+.circle {
+    width: 100px; 
+    height :100px; 
+    background-color:red; 
+    border-radius : 50%; 
+    position:absolute; 
+    top : 90px ; 
+    left : 290px ;
+}

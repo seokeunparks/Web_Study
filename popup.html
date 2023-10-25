@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="popup()">팝업</button>
+    <button onclick="window.close()">팝업 닫기</button>
+    <script>
+        function popup() {
+            // "오늘은 표시하지 않음"이 선택되어 있지 않은 경우에만 팝업을 표시
+            if (localStorage.getItem('noPopupToday') !== 'true') {
+                var popupWindow = window.open('popup.html', '팝업', 'width=200, height=150, resizable=no, scrollbars=no, status=no');
+                
+                // 팝업 내용 설정
+                popupWindow.document.write('<p>팝업 내용</p>');
+                popupWindow.document.write('<input type="checkbox" id="noPopup" onchange="setNoPopup()"> 오늘은 표시하지 않음');
+                popupWindow.document.write('<script>function setNoPopup() { if (document.getElementById("noPopup").checked) { localStorage.setItem("noPopupToday", "true"); } else { localStorage.removeItem("noPopupToday"); } }');
+                
+                // 팝업 창 크기 고정 및 스크롤바 생성 방지
+                popupWindow.document.write('<style>body { overflow: hidden; }</style>');
+            }
+        }
+    </script>
+</body>
+</html>

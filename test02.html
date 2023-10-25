@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function clickEvent() {
+            var result = confirm("클릭하셨습니다. 계속하시겠습니까?");
+            if (result) {
+                alert("확인 버튼을 클릭하셨습니다.");
+            } else {
+                alert("취소 버튼을 클릭하셨습니다.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="clickEvent()">클릭</button>
+</body>
+</html>
